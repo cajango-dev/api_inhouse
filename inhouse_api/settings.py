@@ -77,7 +77,7 @@ JAZZMIN_SETTINGS = {
     "navigation_expanded": True,
     "hide_apps": [],
     "hide_models": [],
-    "order_with_respect_to": ["players", "seasons", "matches", "staff"],
+    "order_with_respect_to": ["staff", "players", "matches", "seasons", "champions"],
     "custom_css": None,
     "custom_js": None,
     "site_logo": "img/inhouse_icon.ico",
@@ -86,7 +86,7 @@ JAZZMIN_SETTINGS = {
 
 JAZZMIN_UI_TWEAKS = {
     "dark_mode": True,
-    "theme": "darkly",  # tema dark do Bootstrap
+    "theme": "superhero",  # tema dark do Bootstrap
     "accent": "success",  # verde (muda cor dos botões, links)
     "navbar_color": "navbar-dark bg-dark",  # barra superior bem escura
     "footer_small_text": True,
@@ -94,8 +94,6 @@ JAZZMIN_UI_TWEAKS = {
     "brand_small_text": False,
     "navbar_small_text": True,
 }
-
-
 
 JAZZMIN_UI_TWEAKS["menu"] = [
     {"app": "players", "label": "Jogadores", "icon": "fas fa-users"},
