@@ -12,8 +12,8 @@ from staff.models import Staff
 
 @admin.register(Champion)
 class ChampionAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-    search_fields = ('name',)
+    list_display = ('id','name',)
+    search_fields = ('id','name',)
 
 @admin.register(ChampionTierList)
 class ChampionTierListAdmin(admin.ModelAdmin):
