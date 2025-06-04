@@ -9,6 +9,10 @@ from season_players.models import SeasonPlayer
 from matches.models import Match
 from seasons.models import Season
 from staff.models import Staff
+from player_vip.models import PlayerVIP
+from promotion_codes.models import PromotionCode
+from report.models import Report
+from report_members.models import ReportMember
 
 @admin.register(Champion)
 class ChampionAdmin(admin.ModelAdmin):
@@ -67,3 +71,27 @@ class StaffAdmin(admin.ModelAdmin):
     list_display = ('discord_user', 'discord_id', 'email', 'level')
     search_fields = ('discord_user', 'email')
     list_filter = ('level',)
+
+@admin.register(PlayerVIP)
+class PlayerVIPAdmin(admin.ModelAdmin):
+    list_display = ('id', 'player', 'active', 'tier', 'expiration', 'vip_days', 'type_vip', 'warnings')
+    search_fields = ('player__discord_user', 'player__discord_id')
+    list_filter = ('active', 'tier', 'type_vip')
+
+@admin.register(PromotionCode)
+class PromotionCodeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'code', 'tier', 'vip_days', 'type_vip', 'redeemed', 'redeem_until', 'created_by')
+    search_fields = ('code',)
+    list_filter = ('tier', 'redeemed', 'type_vip')
+
+@admin.register(Report)
+class ReportAdmin(admin.ModelAdmin):
+    list_display = ('id', 'discord_id', 'reason_text')
+    search_fields = ('discord_id', 'reason_text')
+    list_filter = ('discord_id',)
+
+@admin.register(ReportMember)
+class ReportMemberAdmin(admin.ModelAdmin):
+    list_display = ('id', 'report', 'player')
+    search_fields = ('report__id', 'player__discord_user')
+    list_filter = ('report',)

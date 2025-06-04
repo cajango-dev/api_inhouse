@@ -14,6 +14,8 @@ class Player(models.Model):
     elo_inhouse = models.IntegerField(null=True, blank=True)
     rank_inhouse = models.IntegerField(null=True, blank=True)
     pdl_inhouse = models.IntegerField(null=True, blank=True)
+    coin = models.IntegerField(default=0)
+    last_queue_refuse = models.IntegerField(default=0)
     mmr = models.FloatField(null=True, blank=True)
     sigma = models.FloatField(null=True, blank=True)
     register_type = models.IntegerField(null=True, blank=True)

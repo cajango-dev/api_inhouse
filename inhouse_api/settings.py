@@ -58,6 +58,11 @@ INSTALLED_APPS = [
     'staff',
     'champion_tier_list',
     'inqueue',
+    'player_vip',
+    'promotion_codes',
+    'report',
+    'report_members',
+    'report_reason',
 ]
 
 SIMPLE_JWT = {
